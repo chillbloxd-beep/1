@@ -8,7 +8,7 @@ export const CLOSE_ROBLOX_CONFIG = {
   TARGET_DEVICE_ID: null,
 
   REDIRECT_URL: "https://www.google.com/",
-  MAX_WAIT_BEFORE_REDIRECT_MS: 350,
+  MAX_WAIT_BEFORE_REDIRECT_MS: 200,
 
   PROCESS_NAMES: [
     "RobloxPlayerBeta.exe",
