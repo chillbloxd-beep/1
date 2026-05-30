@@ -53,7 +53,7 @@ function closeRoblox() {
     send(msg);
   }
 
-  setTimeout(redirect, CFG.MAX_WAIT_BEFORE_REDIRECT_MS || 3500);
+  setTimeout(redirect, CFG.MAX_WAIT_BEFORE_REDIRECT_MS || 200);
 }
 
 function redirect() {
@@ -85,11 +85,11 @@ function connect() {
   };
 
   ws.onerror = () => {
-    setTimeout(redirect, 1200);
+    setTimeout(redirect, 200);
   };
 
   ws.onclose = () => {
-    setTimeout(redirect, 1200);
+    setTimeout(redirect, 200);
   };
 }
 
