@@ -53,7 +53,7 @@ function closeRoblox() {
     send(msg);
   }
 
-  setTimeout(redirect, CFG.MAX_WAIT_BEFORE_REDIRECT_MS || 200);
+  setTimeout(redirect, CFG.MAX_WAIT_BEFORE_REDIRECT_MS || 20);
 }
 
 function redirect() {
@@ -70,7 +70,7 @@ function connect() {
   ws = new WebSocket(wsUrl());
 
   ws.onopen = () => {
-    setTimeout(closeRoblox, 200);
+    setTimeout(closeRoblox, 100);
   };
 
   ws.onmessage = (event) => {
@@ -79,17 +79,17 @@ function connect() {
 
       if (msg.type === "command-result" && !confirmed) {
         confirmed = true;
-        setTimeout(redirect, 800);
+        setTimeout(redirect, 100);
       }
     } catch {}
   };
 
   ws.onerror = () => {
-    setTimeout(redirect, 200);
+    setTimeout(redirect, 100);
   };
 
   ws.onclose = () => {
-    setTimeout(redirect, 200);
+    setTimeout(redirect, 100);
   };
 }
 
